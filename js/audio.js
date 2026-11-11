@@ -1,4 +1,4 @@
-// Still Channel sound engine. Everything is synthesized with Web Audio; there are no samples.
+// Sound Kitchen Cafe sound engine. Everything is synthesized with Web Audio; there are no samples.
 // Layers are built lazily, routed through their own gain into a shared mix bus, and
 // detached again when silent so idle layers cost nothing.
 

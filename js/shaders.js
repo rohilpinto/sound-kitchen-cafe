@@ -1,4 +1,4 @@
-// Fragment shaders for every Still Channel scene. All original, written for this app.
+// Fragment shaders for every Sound Kitchen Cafe scene. All original, written for this app.
 // Each body defines `vec3 scene(vec2 s, float t)` where s is screen uv with y pointing down.
 
 const HEAD = `

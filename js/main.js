@@ -3,7 +3,7 @@ import { createStage } from "./scenes.js";
 import { Engine } from "./audio.js";
 import { Sfx } from "./sfx.js";
 
-const STORAGE_KEY = "still-channel-v2";
+const STORAGE_KEY = "sound-kitchen-cafe-v1";
 
 const state = {
   levels: Object.fromEntries(LAYERS.map((layer) => [layer.id, 0])),
