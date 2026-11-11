@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="color-scheme" content="dark" />
+  <title>Still Channel</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div id="stage" aria-hidden="true">
+    <div class="scene-layer" id="scene-a"><canvas></canvas></div>
+    <div class="scene-layer" id="scene-b"><canvas></canvas></div>
+  </div>
+  <div class="grain" aria-hidden="true"></div>
+
+  <main id="console">
+    <header class="top">
+      <div class="brand">
+        <span class="mark">SC</span>
+        <div>
+          <p class="eyebrow">Still Channel</p>
+          <h1>Focus deck</h1>
+        </div>
+      </div>
+
+      <div class="timer" id="timer">
+        <p class="eyebrow">Session</p>
+        <p class="clock" id="clock" aria-live="polite">25:00</p>
+        <div class="timer-row">
+          <button type="button" class="keycap" data-minutes="25">25</button>
+          <button type="button" class="keycap" data-minutes="50">50</button>
+          <label class="custom">
+            <span class="sr">Custom minutes</span>
+            <input id="custom-minutes" type="number" min="1" max="180" value="25" inputmode="numeric" />
+            <span>min</span>
+          </label>
+          <div class="switch-field timer-run">
+            <button type="button" id="timer-toggle" class="rocker" role="switch" aria-checked="false" aria-labelledby="timer-state">
+              <span class="rocker-knob" aria-hidden="true"></span>
+            </button>
+            <span class="switch-read" id="timer-state">Start</span>
+          </div>
+          <button type="button" id="timer-reset" class="keycap">Reset</button>
+        </div>
+        <p class="timer-note" id="timer-note" hidden>Session complete. The mix keeps playing.</p>
+      </div>
+
+      <div class="transport-bay">
+        <div class="switch-field">
+          <span class="switch-label" id="clicks-label">Clicks</span>
+          <button type="button" id="clicks" class="rocker" role="switch" aria-checked="true" aria-labelledby="clicks-label">
+            <span class="rocker-knob" aria-hidden="true"></span>
+          </button>
+          <span class="switch-read" id="clicks-state">On</span>
+        </div>
+        <button type="button" id="power" class="transport" aria-pressed="false">
+          <span class="lamp" aria-hidden="true"></span>
+          <span class="transport-label">Play</span>
+        </button>
+        <button type="button" id="panel-hide" class="keycap" aria-expanded="true" aria-controls="console" aria-keyshortcuts="H">Hide</button>
+      </div>
+    </header>
+
+    <div class="spacer"></div>
+
+    <section class="deck" aria-label="Mixer">
+      <div class="bay" id="bay"></div>
+      <div class="layers" id="layers"></div>
+      <div class="strip strip-moods">
+        <p class="legend">Mood</p>
+        <div class="keys" id="moods" role="group" aria-label="Moods"></div>
+      </div>
+      <div class="strip strip-scenes">
+        <p class="legend">Scene</p>
+        <div class="keys" id="scenes" role="radiogroup" aria-label="Scene"></div>
+      </div>
+      <p class="live" id="live">Deck idle</p>
+    </section>
+  </main>
+  <button type="button" id="panel-show" class="keycap reveal" hidden aria-expanded="false" aria-controls="console" aria-keyshortcuts="H">Show</button>
+
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>
